@@ -1,0 +1,155 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Vos Utilisateurs'" [icon]="'fa-desktop'"></app-page-header>
+  <div class="jumbotron">
+
+       
+     
+        <form  role="form"   class="form-inline" (ngSubmit)="getUsersByNomAndPrenom()">
+                <div class="card mb-3">
+                  <div class="card-header">
+                <div class="form-group" >
+                  <label for="nom" >Nom: &nbsp; </label>
+                 
+                  <input   [(ngModel)]="nom" placeholder="Nom"  name="nom" class="form-control" id="nom">
+                 
+                  &nbsp; &nbsp; &nbsp;
+                  <label for="prenom">Prenom: &nbsp; </label>
+                  <input    [(ngModel)]="prenom"  placeholder="Prenom"  name="prenom" class="form-control" id="prenom">
+               
+              
+                  &nbsp; &nbsp; &nbsp;
+                <button type="submit" class="btn btn-primary" > Rechercher </button>
+                </div>
+                
+    </div>
+    </div>
+    </form>
+
+    <form  role="form"   class="form-inline" (ngSubmit)="getUserById()">
+            <div class="card mb-3">
+              <div class="card-header">
+            <div class="form-group" >
+              <label for="nom" >Id: &nbsp; </label>
+             
+              <input   [(ngModel)]="id" placeholder="Id"  name="id" class="form-control" id="id">
+             
+              
+              &nbsp; &nbsp; &nbsp;
+            <button type="submit" class="btn btn-primary" > Rechercher </button>
+            </div>
+            
+</div>
+</div>
+</form>
+
+<form  role="form"   class="form-inline" (ngSubmit)="getUsersByProfil()">
+        <div class="card mb-3">
+          <div class="card-header">
+        <div class="form-group" >
+          <label for="nom" >Profil: &nbsp; </label>
+         
+          <input   [(ngModel)]="profil" placeholder="Profile"  name="profile" class="form-control" id="profile">
+         
+          
+          &nbsp; &nbsp; &nbsp;
+        <button type="submit" class="btn btn-primary" > Rechercher </button>
+        </div>
+        
+</div>
+</div>
+</form>
+   
+    <form  role="form" class="form-inline">
+        <div class="card mb-3">
+            <div class="card-header">
+                <div class="form-group" >
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         
+      <div  style="text-align: left; ">
+        <a   class="btn btn-lg btn-success" style="color:white" (click)= "goAdd()" >Ajouter un utilisateur</a>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div style="text-align: right" >
+                    <button type="submit" class="btn btn-lg btn-success "  (click)="getUsers()"> Afficher tous les utilisateurs</button>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+   
+          </div>
+         </div>
+         </div> 
+
+</form>
+
+
+
+
+
+
+      <form role="form">
+          <div class="card mb-3">
+              <div class="card-header">
+                <i class="fa fa-list" style="color:pink" aria-hidden="true"></i>
+                <strong style=" color:red"  >  Informations Sur Vos Utilisateurs </strong> 
+                <br>
+              </div>
+              <div class="card-body table-responsive">
+                  <table class="table">
+                      <thead>
+                      <tr >
+                        <th style="color:cornflowerblue">Id</th>
+                          <th style="color:cornflowerblue">Nom</th>
+                          <th style="color:cornflowerblue">Prénom</th>
+                          <th style="color:cornflowerblue">Username</th>
+                         
+                          <th style="color:cornflowerblue">Email</th>
+
+                          <th style="color:cornflowerblue">Profil</th>
+
+                          <th style="color:cornflowerblue">Pharmacie</th>
+                          <th style="color:cornflowerblue"> Détails</th>
+                          
+                      </tr>
+                      </thead>
+                      <tbody>
+
+                        
+                          <tr *ngFor="let user of users">
+                              <td  (click)="onSelect(user)">{{user.id}}</td>
+                              <td  >{{user.nom}}</td>
+                              <td  >{{user.prenom}}</td>
+                              <td  >{{user.username}}</td>
+                              <td  >{{user.email}}</td>
+                              <td  > {{user.role.libelle}} </td>
+                              <td  *ngIf=" user.role.libelle!= 'Administrateur' "> {{ user.pharmacie.nom}}   </td>
+                              <td  *ngIf=" user.role.libelle== 'Administrateur' ">   </td>
+
+                              <td  *ngIf="user!=null"   (click)="onSelect(user)"> <a   class="btn btn-lg btn-danger   btn-sm " style="color:white" > Voir Détails </a></td>
+
+
+
+                              
+                         
+                         
+                           </tr>
+
+                      </tbody>
+                  </table>
+              
+              </div>
+          </div>
+         
+         
+          
+      </form>
+  </div>
+</div>

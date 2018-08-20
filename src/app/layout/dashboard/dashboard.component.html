@@ -1,0 +1,53 @@
+<div [@routerTransition]>
+    <h2 class="text-muted" style="text-align: center"> 'Medica-IT' Bienvenue! </h2>
+    <div class="row">
+        <div class="col-md-12">
+            <ngb-carousel>
+                <ng-template ngbSlide *ngFor="let slider of sliders">
+                    <img class="img-fluid mx-auto d-block" [src]="slider.imagePath" alt="Random first slide" width="100%" >
+                    <div class="carousel-caption">
+                        <h3>{{slider.label}}</h3>
+                        <p>{{slider.text}}</p>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+    <hr >
+    <div class="row " >
+
+        
+   
+        
+                            <div  style="float: left;margin-left: 25%;">
+                                    <app-stat [bgClass]="'primary'" [icon]="'fa-user'" [count]="26" [label]="'Gérer utilisateurs!'" routerLink="/users"></app-stat>
+
+                                </div> 
+                               
+                            
+                            <div style="float: left;margin-left: 2%;">
+                                <app-stat [bgClass]="'success'" [icon]="'fa fa-hospital-o'" [count]="26"  [label]="'Gérer pharmacies!'" ></app-stat>
+                            </div>
+         
+         
+        
+    </div>
+    <hr />
+    <hr />
+
+           
+                <!-- <div class="card-header">
+                    <i class="fa fa-bell fa-fw"></i> Notifications card
+                </div>
+                /.card-header -->
+                <!-- <app-notification></app-notification> --> 
+                <!-- /.card-body -->
+            
+            <!-- /.card -->
+            <!-- <app-chat></app-chat> -->
+            <!-- /.card .chat-card -->
+            
+        
+        <!-- /.col-lg-4 -->
+   
+</div>

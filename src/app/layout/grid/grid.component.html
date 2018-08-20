@@ -1,0 +1,56 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Modifier un utilisateur'" [icon]="'fa-table'"></app-page-header>
+  <div class="col-md-6">
+      
+      
+
+ 
+    <form>
+
+        <div class="form-group">
+            <label for="nom">Nom:</label>
+            <input  placeholder="Nom" name="nom" class="form-control" id="nom">
+          </div>
+        
+          <div class="form-group">
+            <label for="prenom">Prénom:</label>
+            <input  placeholder="Prenom" name="prenom" class="form-control" id="prenom">
+          </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" placeholder="Password" name="password" class="form-control" id="password">
+      </div>
+    
+      
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input  placeholder="Email" name="email" class="form-control" id="email">
+      </div>
+
+      <div class="form-group">
+          <label for="sel1">Role:</label>
+          <select class="form-control" id="sel1">
+            <option>Administrateur</option>
+            <option>Gestionnaire Pharmacie</option>
+            <option>Gestionnaire Pharmacie centrale</option>
+            
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label for="sel1">Pharmacie:</label>
+            <select class="form-control" id="sel1">
+              <option>Sihem elili</option>
+              <option>Pharmacie nuit menzel jmil</option>
+              <option>Pharmacie nuit el alia</option>
+              
+            </select>
+          </div>
+
+      <button class="btn btn-success">Modifier</button>
+    </form>
+    </div>
+    
+</div>      
+

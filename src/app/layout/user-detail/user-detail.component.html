@@ -1,0 +1,138 @@
+<div [@routerTransition]>
+   
+        <app-page-header [heading]="'Détails'" [icon]="'fa-user'"></app-page-header>
+        <div class="jumbotron">
+    <div class="modal-body row">
+        
+        <div class="col-md-6">
+            <div class="container bootstrap snippet">
+                <div class="panel-body inf-content">
+             <div class="row">
+                
+                    <div class="card mb-3">
+                            <div class="card-header">
+                <i class="fa fa-list" aria-hidden="true"></i>
+                <strong>  Informations sur {{user.nom}} {{user.prenom }}</strong> 
+                <br>
+              
+        
+        <div class="table-responsive">
+        <table class="table table-condensed table-responsive table-user-information">
+            <tbody>
+                <tr>        
+                    <td>
+                        <strong>
+                            <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                            Id                                                
+                        </strong>
+                    </td>
+                    <td class="text-primary">
+                        {{user.id}} 
+                    </td>
+                </tr>
+                
+                <tr>        
+                    <td>
+                        <strong>
+                            <span class="glyphicon glyphicon-cloud text-primary"></span>  
+                            Nom                                                
+                        </strong>
+                    </td>
+                    <td class="text-primary">
+                        {{user.nom}}
+                    </td>
+                </tr>
+    
+                <tr>        
+                    <td>
+                        <strong>
+                            <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                            Prénom                                               
+                        </strong>
+                    </td>
+                    <td class="text-primary">
+                         {{user.prenom}}
+                    </td>
+                </tr>
+    
+                <tr>        
+                    <td>
+                        <strong>
+                            <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                            Username                                              
+                        </strong>
+                    </td>
+                    <td class="text-primary">
+                         {{user.username}}
+                    </td>
+                </tr>
+    
+    
+
+                <tr>        
+                    <td>
+                        <strong>
+                            <span class="glyphicon glyphicon-envelope text-primary"></span> 
+                            Email                                                
+                        </strong>
+                    </td>
+                    <td class="text-primary">
+                     {{user.email}}
+                    </td>
+                </tr>
+                
+                <tr>        
+                    <td>
+                        <strong>
+                            <span class="glyphicon glyphicon-calendar text-primary"></span>
+                            Profil                                            
+                        </strong>
+                    </td>
+                    <td class="text-primary">
+                         {{user.role.libelle}}
+                    </td>
+                </tr>  
+                
+                <tr>        
+                        <td>
+                            <strong>
+                                <span class="glyphicon glyphicon-calendar text-primary"></span>
+                                Pharmacie                                              
+                            </strong>
+                        </td>
+                        <td class="text-primary" *ngIf="user.role.libelle!= 'Administrateur'" >
+                            {{user.pharmacie.nom}} 
+                        </td>
+    
+                        
+                    </tr>
+            </tbody>
+        </table>
+    
+    
+    
+    </div>
+    </div>
+     </div>
+              </div>
+              </div>
+              </div>
+        </div>
+        <div class="col-md-6">
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            <div> <button class="btn btn-success btn-lg btn-block" (click)="onSelect()" >Modifier</button> </div>
+            
+            <br>
+            <br>
+            <br>
+            
+            <div> <button class="btn btn-danger btn-lg btn-block"  (click)="deleteUser(user)" >Supprimer</button> </div>
+    
+      </div>
+      </div>
+      </div>
+     </div>

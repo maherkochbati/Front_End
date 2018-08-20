@@ -1,0 +1,34 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row justify-content-md-center">
+        <div class="col-md-7">
+            <img src="assets/images/logo.png" width="150px" class="user-avatar" />
+            <h1>Gestion des produits pharmaceutiques</h1>
+
+            
+          
+            <form role="form" (ngSubmit)="login()" [hidden]="loggedIn">
+                <div class="form-content">
+                        <div *ngIf="mode==1" class="alert alert-danger">
+                                Nom d'utilisateur ou mot de passe sont invalides!
+                              </div>
+                        <div *ngIf="unauthorized==1" class="alert alert-danger">
+                                   Vous n'êtes pas autorisé à accéder à cette application !
+                                  </div>
+
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="username" class="form-control input-underline input-lg" id="username" placeholder="Username" name="username">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" [(ngModel)]="password" class="form-control input-underline input-lg" id="password" placeholder="Password" name="password">
+                    </div>
+                </div>
+                <button type="submit" class="btn rounded-btn" > Log in </button>
+                &nbsp;
+                <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a>
+            </form>
+           
+        </div>
+      
+    </div>
+</div>

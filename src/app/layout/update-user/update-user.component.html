@@ -1,0 +1,66 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Modifier un utilisateur'" [icon]="'fa-table'"></app-page-header>
+    <div class="jumbotron">
+      <form>
+          <div class="card mb-3">
+              <div class="card-header">
+      
+        <div class="form-group">
+          <label for="nom">Nom:</label>
+          <input  [(ngModel)]="user.nom" placeholder="Nom"  name="nom" class="form-control" id="nom">
+        </div>
+      
+        <div class="form-group">
+          <label for="prenom">Prenom:</label>
+          <input  [(ngModel)]="user.prenom"  placeholder="Prenom"  name="prenom" class="form-control" id="prenom">
+        </div>
+
+        <div class="form-group">
+          <label for="prenom">Username:</label>
+          <input  [(ngModel)]="user.username"  placeholder="Username"  name="username" class="form-control" id="username">
+        </div>
+        
+        <div class="form-group">
+          <label for="mdp">Mot de passe:</label>
+          <input type="mdp"  [(ngModel)]="user.mdp" placeholder="Mdp" name="mdp" class="form-control" id="mdp">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input  type="email"  [(ngModel)]="user.email"  placeholder="Email" name="email" class="form-control" id="email">
+        </div>
+  
+       
+        <div class="form-group">
+          <label for="sel1">Profil:</label>
+          <select    [(ngModel)]="user.role.libelle" (ngModelChange)="setNewRole($event)" class="form-control"  name="sel1" id="sel1" >
+            
+            <option *ngFor="let role of roles"  [ngValue]="role.libelle" >  {{role.libelle}} </option>
+            
+          </select>
+        </div>
+       
+      
+
+        <div *ngIf="user.role.libelle== 'Gestionnaire Pharmacie' || user.role.libelle== 'Gestionnaire Pharmacie Centrale'"  class="form-group">
+          <label for="sel1">Pharmacie:</label>          
+          <select  class="form-control " [(ngModel)]="user.pharmacie.nom" (ngModelChange)="setNewPharmacie($event)"  id="sel2" name="sel2" >
+            
+
+         <option *ngFor="let pharmacie of pharmacies" [ngValue]="pharmacie.nom" >  {{pharmacie.nom}}</option>
+                  
+      </select>
+     </div>
+        
+    
+      
+  
+       <div> <button class="btn btn-success" (click) ="updateUser()" >Modifier</button> </div>
+       </div>
+       </div>
+
+      </form>
+      </div>
+      </div>
+=  
+  

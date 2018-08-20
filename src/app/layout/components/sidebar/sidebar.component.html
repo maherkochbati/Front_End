@@ -1,0 +1,18 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+    <div class="list-group">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-home" style="font-size:24px"></i>&nbsp;{{ 'Acceuil' | translate }}
+        </a>
+        <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-hospital-o" style="font-size:24px"></i>&nbsp;{{ 'Gestion pharmacies' | translate }}
+        </a>
+        <a [routerLink]="['/users']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-user" aria-hidden="true" style="font-size:24px"></i>&nbsp;{{ 'Gestion Utilisateurs' | translate }}
+        </a>
+
+        <a [routerLink]="['/change-password']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-user" aria-hidden="true" style="font-size:24px"></i>&nbsp;{{ 'Change Password' | translate }}
+        </a>
+      
+          </div>
+</nav>
