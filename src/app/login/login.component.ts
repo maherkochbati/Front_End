@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
             this.user = data;
             
             sessionStorage.setItem("ROLE", this.user.role.libelle);
+            sessionStorage.setItem("comparison", "false");
 
             if(this.user.role.libelle != "Administrateur")
             {

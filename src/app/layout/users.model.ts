@@ -3,12 +3,11 @@ import { Role } from "./role.model";
 export class Users {
 
     id: number;
-    nom: string;
+    nom: String;
     prenom: String;
-    username: string;
+    username: String;
     mdp: String;
     email: String;
-    etat: boolean; 
     pharmacie: Pharmacie;
     role: Role;
   

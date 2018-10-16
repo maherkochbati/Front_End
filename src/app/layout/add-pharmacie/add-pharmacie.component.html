@@ -1,0 +1,50 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Ajouter une nouvelle pharmacie'" [icon]="'fa-table'"></app-page-header>
+  <div class="jumbotron">
+        <form>
+      <div class="card mb-3">
+        <div class="card-header">
+      <div class="form-group">
+        <label for="nom">Nom:</label>
+        <input  [(ngModel)]="pharmacie.nom" placeholder="Nom"  name="nom" class="form-control" id="nom">
+      </div>
+    
+      <div class="form-group">
+        <label for="adresse">Adresse:</label>
+        <input  [(ngModel)]="pharmacie.adresse"  placeholder="Adresse"  name="adresse" class="form-control" id="adresse">
+      </div>
+
+      <div class="form-group">
+        <label for="telephone">Téléphone:</label>
+        <input  [(ngModel)]="pharmacie.tel"  placeholder="Telephone"  name="telephone" class="form-control" id="telephone">
+      </div>
+
+     
+      
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input  type="email"  [(ngModel)]="pharmacie.mail"  placeholder="Email" name="email" class="form-control" id="email">
+      </div>
+
+     
+
+      <div class="form-group">
+          <label for="sel1">Region:</label>
+          <select   [(ngModel)]="pharmacie.region"  (ngModelChange)="setNewRegion($event)" class="form-control"  name="sel1" id="sel1" >
+            
+            <option *ngFor="let region of regions"  [ngValue]="region" >  {{region.nom}} </option>
+            
+          </select>
+        </div>
+       
+      
+
+
+     <div> <button class="btn btn-success" (click) ="createPharmacie()" >Ajouter</button> </div>
+       </div>
+       </div>
+    </form>
+    
+
+</div>
+</div>       

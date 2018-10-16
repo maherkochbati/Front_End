@@ -23,7 +23,7 @@ export class UserDetailComponent implements OnInit {
    deleteUser(user: Users): void {
     this.userService.deleteUser(user)
       .subscribe( data => {
-        alert("user deleted successfully");
+        confirm("user deleted successfully");
         this.router.navigate(['/users']);
 
       })

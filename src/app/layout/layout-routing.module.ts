@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
-import { AuthGuard } from '../shared/guard/auth.guard';
+import { ChangePasswordGuard } from '../shared/guard/change-password.guard';
 
 const routes: Routes = [
     {
@@ -14,7 +14,7 @@ const routes: Routes = [
             { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
             { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
             { path: 'forms', loadChildren: './form/form.module#FormModule' },
-            { path: 'change-password', loadChildren: './change-password/change-password.module#ChangePasswordModule' },
+            { path: 'change-password', loadChildren: './change-password/change-password.module#ChangePasswordModule' , canActivate: [ChangePasswordGuard]},
             { path: 'grid', loadChildren: './grid/grid.module#GridModule' },
            
             
@@ -24,7 +24,13 @@ const routes: Routes = [
             { path: 'update-user/:id', loadChildren: './update-user/update-user.module#UpdateUserModule'},
             { path: 'users', loadChildren: './users/users.module#UsersModule'},
             { path: 'user-detail/:id', loadChildren: './user-detail/user-detail.module#UserDetailModule'},
-            { path: 'roles', loadChildren: './roles/roles.module#RolesModule' }
+            { path: 'roles', loadChildren: './roles/roles.module#RolesModule' },
+            { path: 'validate-password', loadChildren: './validate-password/validate-password.module#ValidatePasswordModule' },
+            { path: 'add-pharmacie', loadChildren: './add-pharmacie/add-pharmacie.module#AddPharmacieModule'},
+            { path: 'pharmacies', loadChildren: './pharmacies/pharmacies.module#PharmaciesModule'},
+            { path: 'pharmacie-detail/:id', loadChildren: './pharmacie-detail/pharmacie-detail.module#PharmacieDetailModule'},
+            { path: 'update-pharmacie/:id', loadChildren: './update-pharmacie/update-pharmacie.module#UpdatePharmacieModule'}
+
         ]
     }
 ];

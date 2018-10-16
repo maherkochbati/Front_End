@@ -1,0 +1,138 @@
+<div [@routerTransition]>
+   
+    <app-page-header [heading]="'Détails'" [icon]="'fa-hospital-o'"></app-page-header>
+    <div class="jumbotron">
+<div class="modal-body row">
+    
+    <div class="col-md-6">
+        <div class="container bootstrap snippet">
+            <div class="panel-body inf-content">
+         <div class="row">
+            
+                <div class="card mb-3">
+                        <div class="card-header">
+            <i class="fa fa-list" style=" color:pink" aria-hidden="true"></i>
+            <strong style=" color:red">  Informations sur {{pharmacie.nom}} {{pharmacie.region.nom }}</strong> 
+            <br>
+          
+    
+    <div class="table-responsive">
+    <table class="table table-condensed table-responsive table-user-information">
+        <tbody>
+            <tr>        
+                <td>
+                    <strong>
+                        <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                        Id                                                
+                    </strong>
+                </td>
+                <td class="text-primary">
+                    {{pharmacie.id}} 
+                </td>
+            </tr>
+            
+            <tr>        
+                <td>
+                    <strong>
+                        <span class="glyphicon glyphicon-cloud text-primary"></span>  
+                        Nom                                                
+                    </strong>
+                </td>
+                <td class="text-primary">
+                    {{pharmacie.nom}}
+                </td>
+            </tr>
+
+            <tr>        
+                <td>
+                    <strong>
+                        <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                        Adresse                                              
+                    </strong>
+                </td>
+                <td class="text-primary">
+                     {{pharmacie.adresse}}
+                </td>
+            </tr>
+
+            <tr>        
+                <td>
+                    <strong>
+                        <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                        Téléphone                                             
+                    </strong>
+                </td>
+                <td class="text-primary">
+                     {{pharmacie.tel}}
+                </td>
+            </tr>
+
+
+
+            <tr>        
+                <td>
+                    <strong>
+                        <span class="glyphicon glyphicon-envelope text-primary"></span> 
+                        Email                                                
+                    </strong>
+                </td>
+                <td class="text-primary">
+                 {{pharmacie.mail}}
+                </td>
+            </tr>
+            
+            <tr>        
+                <td>
+                    <strong>
+                        <span class="glyphicon glyphicon-calendar text-primary"></span>
+                        Région                                           
+                    </strong>
+                </td>
+                <td class="text-primary">
+                     {{pharmacie.region.nom}}
+                </td>
+            </tr>  
+            
+            <tr>        
+                    <td>
+                        <strong>
+                            <span class="glyphicon glyphicon-calendar text-primary"></span>
+                            UserAdmin                                              
+                        </strong>
+                    </td>
+                    <td class="text-primary"  >
+                        {{pharmacie.userAdmin.id}} 
+                    </td>
+
+                    
+                </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
+</div>
+ </div>
+          </div>
+          </div>
+          </div>
+    </div>
+    <div class="col-md-6">
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <div> <button class="btn btn-success btn-lg btn-block"  (click)="onSelect()" >Modifier</button> </div>
+        
+        <br>
+        <br>
+        <br>
+        
+        <div> <button class="btn btn-danger btn-lg btn-block"  (click)="deletePharmacie(pharmacie)" >Supprimer</button> </div>
+
+  </div>
+  </div>
+  </div>
+ </div>

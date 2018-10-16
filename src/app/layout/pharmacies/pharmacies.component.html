@@ -1,0 +1,146 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Gestion Pharmacies'" [icon]="'fa-table'"></app-page-header>
+  <div class="jumbotron">
+
+
+        <form  role="form"   class="form-inline" (ngSubmit)="getPharmacieByNom()">
+                <div class="card mb-3">
+                  <div class="card-header">
+                <div class="form-group" >
+                  <label for="nom" >Nom: &nbsp; </label>
+                 
+                  <input   [(ngModel)]="nom" placeholder="Nom"  name="nom" class="form-control" id="nom">
+                 
+                  
+                  &nbsp; &nbsp; &nbsp;
+                <button type="submit" class="btn btn-primary" > Rechercher </button>
+                </div>
+                
+        </div>
+        </div>
+        </form>
+
+    <form  role="form"   class="form-inline" (ngSubmit)="getPharmacieById()">
+        <div class="card mb-3">
+          <div class="card-header">
+        <div class="form-group" >
+          <label for="nom" >Id: &nbsp; </label>
+         
+          <input   [(ngModel)]="id" placeholder="Id"  name="id" class="form-control" id="id">
+         
+          
+          &nbsp; &nbsp; &nbsp;
+        <button type="submit" class="btn btn-primary" > Rechercher </button>
+        </div>
+        
+</div>
+</div>
+</form>
+
+<form  role="form"   class="form-inline" (ngSubmit)="getPharmacieByRegion()">
+        <div class="card mb-3">
+          <div class="card-header">
+        <div class="form-group" >
+          <label for="nom" >Region: &nbsp; </label>
+         
+          <input   [(ngModel)]="region" placeholder="Region"  name="region" class="form-control" id="region">
+         
+          
+          &nbsp; &nbsp; &nbsp;
+        <button type="submit" class="btn btn-primary" > Rechercher </button>
+        </div>
+        
+</div>
+</div>
+</form>
+
+<form  role="form" class="form-inline">
+        <div class="card mb-3">
+            <div class="card-header">
+                <div class="form-group" >
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         
+      <div  style="text-align: left; ">
+        <a   class="btn btn-lg btn-success" style="color:white" (click)= "goAdd()" >Ajouter une pharmacie</a>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div style="text-align: right" >
+                    <button type="submit" class="btn btn-lg btn-success "  (click)="getPharmacies()"> Afficher toutes les pharmacies</button>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+             
+   
+          </div>
+         </div>
+         </div> 
+
+</form>
+
+      <form role="form">
+        <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-list" style="color:pink" aria-hidden="true"></i>
+              <strong style=" color:red"  >  Informations Sur Vos Pharmacies </strong> 
+              <br>
+            </div>
+            <div class="card-body table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr >
+                      <th style="color:cornflowerblue">Id</th>
+                        <th style="color:cornflowerblue">Nom</th>
+                        <th style="color:cornflowerblue">Adresse</th>
+                        
+                       
+                        <th style="color:cornflowerblue">Email</th>
+
+                        <th style="color:cornflowerblue">Téléphone</th>
+
+                        <th style="color:cornflowerblue">Région</th>
+                        <th style="color:cornflowerblue"> UserAdmin</th>
+                        <th style="color:cornflowerblue"> Détails</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                      
+                        <tr *ngFor="let pharmacie of pharmacies">
+                            <td  >{{pharmacie.id}}</td>
+                            <td  >{{pharmacie.nom}}</td>
+                            <td  >{{pharmacie.adresse}}</td>
+                            <td  >{{pharmacie.mail}}</td>
+                            <td  >{{pharmacie.tel}}</td>
+                            <td  > {{pharmacie.region.nom}} </td>
+                            <td  > {{pharmacie.userAdmin.id}} </td>
+                            
+
+                            <td  (click)="onSelect(pharmacie)" *ngIf="pharmacie!=null" > <a   class="btn btn-lg btn-danger   btn-sm " style="color:white" > Voir Détails </a></td>
+
+
+
+                            
+                       
+                       
+                         </tr>
+
+                    </tbody>
+                </table>
+            
+            </div>
+        </div>
+       
+       
+        
+    </form>
+    </div>
+    </div>
+    

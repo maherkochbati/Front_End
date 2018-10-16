@@ -11,8 +11,9 @@ import { AuthService } from '../../../login/auth.service';
 })
 export class HeaderComponent implements OnInit {
     pushRightClass: string = 'push-right';
+    user: any;
 
-    constructor(private translate: TranslateService,  public router: Router) {
+    constructor(private translate: TranslateService,  public router: Router, private authService: AuthService) {
 
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS']);
         this.translate.setDefaultLang('en');
@@ -30,7 +31,18 @@ export class HeaderComponent implements OnInit {
         });
     }
 
-    ngOnInit() {}
+    ngOnInit() {
+
+        this.authService.getUserAllData()
+        .subscribe(
+            data =>
+            {
+
+
+                this.user= data;
+            }
+        )
+    }
 
     isToggled(): boolean {
         const dom: Element = document.querySelector('body');
@@ -50,6 +62,7 @@ export class HeaderComponent implements OnInit {
     logout(){
         window.sessionStorage.removeItem('AuthToken');
         window.sessionStorage.removeItem('ROLE');
+        window.sessionStorage.removeItem("comparison");
         this.router.navigate(['/login']);
       }
 

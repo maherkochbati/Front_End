@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './shared';
+import { ChangePasswordGuard } from './shared/guard/change-password.guard';
 
 
 // AoT requires an exported function for factories
@@ -44,7 +45,7 @@ export const createTranslateLoader = (http: HttpClient) => {
     ],
     declarations: [AppComponent],
   
-    providers: [AuthGuard
+    providers: [AuthGuard, ChangePasswordGuard
         ],
     bootstrap: [AppComponent]
 })

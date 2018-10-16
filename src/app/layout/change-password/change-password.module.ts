@@ -9,7 +9,6 @@ import { ChangePasswordService } from './change-password.service';
 
 
 
-
 @NgModule({
   imports: [
     CommonModule, ChangePasswordRoutingModule, PageHeaderModule, FormsModule, ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
